@@ -7,7 +7,7 @@ public class SelectLevel : MonoBehaviour
 
     private void Start()
     {
-        _Main = GameObject.Find("_Main(Clone)");
+        _Main = GameObject.Find("_Main");
         levelManager = _Main.GetComponent<LevelManager>();
     }
 

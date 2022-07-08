@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        // This is a hack to know whether we are in scene zero.
+        // NOTE scene.buildIndex is -1 because _Main is marked DontDetroyOnLoad.
         GameObject ui = GameObject.Find("UI");
         if (ui != null)
         {
