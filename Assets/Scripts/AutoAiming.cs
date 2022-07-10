@@ -6,7 +6,7 @@ public class AutoAiming : MonoBehaviour
 {
     [SerializeField] Transform muzzle;
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] ParticleSystem hitEffect;
+    [SerializeField] ParticleSystem hitEffect; // This shouldn't be a prefab reference (it doesn't work.)
     [SerializeField] Image crosshairRedX;
     [SerializeField] Image crosshairRedDot;
     [SerializeField] Image crosshairWhiteCircleBlank;
@@ -34,8 +34,8 @@ public class AutoAiming : MonoBehaviour
 
     private void Awake()
     {
-        // This doesn't work as a prefab: it needs to be instantiated.
-        hitEffect = Object.Instantiate(hitEffect);
+        //// This doesn't work as a prefab: it needs to be instantiated.
+        //hitEffect = Object.Instantiate(hitEffect);
 
         target1 = null;
         target2 = null;
@@ -201,7 +201,7 @@ public class AutoAiming : MonoBehaviour
         muzzleFlash.Emit(1);
 
         hitEffect.transform.position = hitInfo2.point;
-        hitEffect.transform.forward = hitInfo1.normal;
+        hitEffect.transform.forward = hitInfo2.normal;
         hitEffect.Emit(1);
 
         distanceN = Vector3.Distance(muzzle.position, hitInfo2.point) / N;
