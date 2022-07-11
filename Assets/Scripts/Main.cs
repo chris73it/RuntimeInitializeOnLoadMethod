@@ -16,10 +16,14 @@ public class Main : MonoBehaviour
     public static void LoadMain()
     {
         var _main = Resources.Load("_Main") as GameObject;
+        if (_main == null)
+        {
+            Debug.LogError("Could not find _Main in Resoources!");
+            return;
+        }
         if (_main.activeSelf == false)
         {
-            Debug.LogWarning("Skipping Resource::_Main instantiation because it is inactive");
-            return;
+            Debug.Log("Resource::_Main is inactive");
         }
         _mainClone = Object.Instantiate(_main);
         _mainClone.name = "_Main"; // Remove trailing (Clone) from _Main(Clone)'s name.
@@ -33,7 +37,7 @@ public class Main : MonoBehaviour
     private void Awake()
     {
         numAwakeExecutions++;
-        //Debug.Log("Number of Awake() executions " + numAwakeExecutions);
+        Debug.Log("Number of Awake() executions " + numAwakeExecutions);
         if (numAwakeExecutions == 2)
         {
             // Keep _Main and destroy the one coming from Resources,
@@ -41,6 +45,7 @@ public class Main : MonoBehaviour
             // name has been changed to drop the (Clone) at the end,
             // so that, no matter what, the object in the Hierarchy
             // is always named _Main.)
+            Debug.Log("Eliminating cloned _Main");
             Destroy(_mainClone);
         }
     }
