@@ -4,7 +4,6 @@ public class Main : MonoBehaviour
 {
     static int numAwakeExecutions = 0;
     static GameObject _mainClone;
-    [SerializeField] ParticleSystem hitEffect;
 
     // Runs before a scene gets loaded.
     // NOTE1 Sometimes we want to drag _Main into the Hierarchy before pressing Play,
