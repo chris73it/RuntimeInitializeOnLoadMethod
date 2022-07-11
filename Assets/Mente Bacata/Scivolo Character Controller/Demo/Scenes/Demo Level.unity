@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 93949075}
   - component: {fileID: 93949074}
   - component: {fileID: 93949072}
-  - component: {fileID: 93949071}
+  - component: {fileID: 93949076}
   m_Layer: 6
   m_Name: Moving Platform Vertical
   m_TagString: Untagged
@@ -653,20 +653,6 @@ Transform:
   m_Father: {fileID: 251133440}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &93949071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93949069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e50bc1f6b8838408a64da378cc4ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  angularSpeed: 30
 --- !u!65 &93949072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -730,6 +716,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93949069}
   m_Mesh: {fileID: 1773628494}
+--- !u!114 &93949076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93949069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894378181afb444fa59eeb22ba8c9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  angularSpeed: 30
 --- !u!43 &125234449
 Mesh:
   m_ObjectHideFlags: 0
@@ -6056,7 +6056,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078148757}
-  - component: {fileID: 1078148758}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -6096,18 +6095,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1078148758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078148755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f3121983b33fd47bcf2f8e894a8d2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1096848021
 Mesh:
   m_ObjectHideFlags: 0
@@ -10623,7 +10610,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1973736024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e50bc1f6b8838408a64da378cc4ee8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9894378181afb444fa59eeb22ba8c9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
