@@ -3,7 +3,7 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     static int numAwakeExecutions = 0;
-    static GameObject _mainClone;
+    static GameObject _mainResources;
 
     // Runs before a scene gets loaded.
     // NOTE1 Sometimes we want to drag _Main into the Hierarchy before pressing Play,
@@ -15,19 +15,19 @@ public class Main : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void LoadMain()
     {
-        var _main = Resources.Load("_Main") as GameObject;
-        if (_main == null)
+        _mainResources = Resources.Load("_Main") as GameObject;
+        if (_mainResources == null)
         {
-            Debug.LogError("Could not find _Main in Resoources!");
+            Debug.LogError("Could not find Resources::_Main");
             return;
         }
-        if (_main.activeSelf == false)
+        if (_mainResources.activeSelf == false)
         {
-            Debug.Log("Resource::_Main is inactive");
+            Debug.Log("Resources::_Main is inactive");
         }
-        _mainClone = Object.Instantiate(_main);
-        _mainClone.name = "_Main"; // Remove trailing (Clone) from _Main(Clone)'s name.
-        GameObject.DontDestroyOnLoad(_mainClone);
+        _mainResources = Object.Instantiate(_mainResources);
+        _mainResources.name = "_Main"; // Remove trailing (Clone) from _Main(Clone)'s name.
+        GameObject.DontDestroyOnLoad(_mainResources);
     }
 
     // You can choose to add any "Service" component to the _Main prefab.
@@ -45,8 +45,8 @@ public class Main : MonoBehaviour
             // name has been changed to drop the (Clone) at the end,
             // so that, no matter what, the object in the Hierarchy
             // is always named _Main.)
-            Debug.Log("Eliminating cloned _Main");
-            Destroy(_mainClone);
+            Debug.Log("Eliminating instance of cloned Resources::_Main");
+            Destroy(_mainResources);
         }
     }
 }
